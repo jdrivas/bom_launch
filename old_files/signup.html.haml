@@ -1,0 +1,27 @@
+%h2 Give us some advice and get in on the beta.
+.panel
+  .panel-body#mc-embed_signup
+    %form.form-horizontal.validate#mc-embedded-subscribe-form{role: "form", action: "http://momentlabs.us3.list-manage.com/subscribe/post?u=be9dc5c5390ad06faabaf01ef&amp;id=464e1849b7", method: "post", name: "mc-embedded-subscribe-form", target: "_blank", novalidate: ""}
+      .form-group
+        .response.alert.alert-danger#mce-error-response{style: "display:none"}Hello
+        .response.alert.alert-success#mce-success-response{style: "display:none"}
+        .indicates-required <span class="asterisk">*</span> indicates required
+      .form-group
+        %label.col-sm-2{for: "email"}Email Address <span class="astrisk">*</span>
+        %input.col-sm-2.required.email#mce-EMAIL{type: "email", value: "", name: "EMAIL"}
+        %label.col-sm-2{for: "mce-ADVICE"}Advice
+        %textarea.col-sm-3#mce-ADVICE{type: "text", value: "", 
+          placeholder: "Tell us which problem you'd like us to solve.", 
+          name: "ADVICE", rows: 3}
+      .form-group
+        %label.col-sm-2{for: "mce-FNAME"}First Name
+        %input.col-sm-2#mce-FNAME{type: "text", value: "", name:"FNAME"}
+        %label.col-sm-2{for: "mce-LNAME"}Last Name
+        %input.col-sm-3#mce-LNAME{type: "text", value: "", name: "LNAME"} 
+      .form-group
+      .form-group  
+        %input.btn.btn-primary#mc-embedded-subscribe{type: "submit", value: "Subscribe", name:"subscribe"}
+      %div{style: "position: absolute; left: -5000px;"}
+        %input{type: "text", name: "b_be9dc5c5390ad06faabaf01ef_464e1849b7", value: ""}
+
+= javascript_include_tag "mailchimp"
