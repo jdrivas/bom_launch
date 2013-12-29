@@ -68,3 +68,27 @@ configure :build do
   # Or use a different image path
   # set :http_prefix, "/Content/images/"
 end
+
+#Deploy
+
+# activate :sync do |s|
+#   s.fog_provider = 'AWS'
+#   s.fog_directory = 'bofmd.com'
+#   s.fog_region = 'us-east-1'
+#   s.existing_remote_files = 'keep'
+#   s.sync.after_build = false
+# end
+
+activate :s3_sync do |s3_sync|
+  s3_sync.bucket = 'bofmd.com'
+  s3_sync.region = 'us-east-1'
+  # s3_sync.aws_access_key_id
+  # s3_sync.aws_secret_access_key
+  s3_sync.delete  = true
+  s3_sync.after_build = false
+  # s3_sync.prefer_gzip = true
+  s3_sync.path_style = true
+  s3_sync.reduced_redundancy_storage = false
+  s3_sync.acl = 'public-read'
+  s3_sync.encryption = false
+end
